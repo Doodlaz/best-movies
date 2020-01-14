@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
-import { Wrapper } from './styles';
+import { Menu } from 'antd'
+
+import { Wrapper, Container, Logo } from './styles'
 
 const links =[
   {
@@ -8,23 +10,19 @@ const links =[
     href: '/',
   },
   {
-    name: 'Somepage',
-    href: '/somepage',
-  },
-  {
-    name: 'About',
-    href: '/about',
-  },
+    name: 'Movies',
+    href: '/movies',
+  }
 ];
 
-const Index = () => {
+const Header = () => {
 
   const renderLinks = () => {
-    return links.map(( item, index ) => {
+    return links.map(( item ) => {
       return (
-        <li key={ index }>
+        <Menu.Item key={ item.name }>
           <NavLink to={ item.href } exact >{ item.name }</NavLink>
-        </li>
+        </Menu.Item>
       )
     })
   };
@@ -32,10 +30,18 @@ const Index = () => {
   return (
     <>
       <Wrapper>
-        <ul> { renderLinks() } </ul>
+        <Container>
+          <NavLink className={ 'logo' } to={ '/' } exact >
+            <span>B</span>est <span>M</span>ovies
+          </NavLink>
+
+          <Menu mode="horizontal">
+            { renderLinks() }
+          </Menu>
+        </Container>
       </Wrapper>
     </>
 
   )
 }
-export default Index;
+export default Header;

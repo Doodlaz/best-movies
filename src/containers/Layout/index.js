@@ -1,20 +1,13 @@
 import React  from 'react';
-import {Route} from 'react-router-dom'
-import Header from '../../components/Navigation/Header/index'
+import Dashboard from '../Dashboard/index'
 
-const Index = () => {
+import './layout.css';
+
+const Layout = () => {
 
   return (
-    <div className="layout" >
-      <Header />
-
-      <main>
-        <Route path={'/'} exact render={() => <h1>Home page</h1> }/>
-        <Route path={'/somepage'} exact render={() => <h1>Somepage page</h1> }/>
-        <Route path={'/about'} exact render={() => <h1>About page</h1> }/>
-      </main>
-    </div>
+    <Dashboard/>
   )
 };
 
-export default Index;
+export default Layout;
