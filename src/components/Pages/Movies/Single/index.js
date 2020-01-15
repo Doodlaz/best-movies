@@ -5,7 +5,7 @@ const { Title } = Typography
 
 const MovieSingle = ({ match }) => (
   <Row className={ 'title-wrap' } type='flex' justify='space-between' align='middle'>
-    <Title level={ 2 }>Movie - {match.params.id}</Title>
+    <Title level={ 2 }>{match.params.id}</Title>
   </Row>
 )
 

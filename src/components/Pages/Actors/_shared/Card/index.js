@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { Wraper } from './styles'
 import { Card } from 'antd'
@@ -12,9 +13,11 @@ const dataMove = {
 
 const ActorCard = () => (
   <Wraper>
-    <Card hoverable cover={<img alt="example" src={ dataMove.imgSrc } /> }>
-      <Meta title={ dataMove.name } description={ dataMove.portfolio } />
-    </Card>
+    <Link to={ '/Actors/brad-pitt' }>
+      <Card hoverable cover={<img alt="example" src={ dataMove.imgSrc } /> }>
+        <Meta title={ dataMove.name } description={ dataMove.portfolio } />
+      </Card>
+    </Link>
   </Wraper>
 )
 
