@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 import { Menu } from 'antd'
+import { nav } from '../../../../src/settings/Configs/dataConfig'
 
-import { Wrapper, Container, Logo } from './styles'
+import { Wrapper, Container } from './styles'
 
 const links =[
   {
@@ -12,16 +13,20 @@ const links =[
   {
     name: 'Movies',
     href: '/movies',
+  },
+  {
+    name: 'Actors',
+    href: '/actors',
   }
 ];
 
 const Header = () => {
 
   const renderLinks = () => {
-    return links.map(( item ) => {
+    return nav.map(( item ) => {
       return (
-        <Menu.Item key={ item.name }>
-          <NavLink to={ item.href } exact >{ item.name }</NavLink>
+        <Menu.Item key={ item.title }>
+          <NavLink to={ item.href } exact >{ item.title }</NavLink>
         </Menu.Item>
       )
     })

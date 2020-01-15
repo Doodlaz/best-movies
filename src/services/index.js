@@ -4,4 +4,5 @@ export class API {
   static login(credentials) {
     return axios.post('/authentication', credentials)
   }
+
 }

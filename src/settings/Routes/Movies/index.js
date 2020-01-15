@@ -1,4 +1,5 @@
-import Movies from '../../../../src/components/Dashboard/Movies'
+import Movies from '../../../../src/components/Pages/Movies'
+import MovieSingle from '../../../../src/components/Pages/Movies/Single'
 
 const MoviesRoutes = [
   {
@@ -7,12 +8,12 @@ const MoviesRoutes = [
     permission: 1,
     component: Movies,
   },
-  // {
-  //   name: 'Single movies',
-  //   path: '/movies/:id',
-  //   permission: 1,
-  //   component: MoviesSingle,
-  // },
+  {
+    name: 'Single movies',
+    path: '/movies/:id',
+    permission: 1,
+    component: MovieSingle,
+  },
 ]
 
 export default MoviesRoutes
