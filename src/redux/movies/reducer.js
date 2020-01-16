@@ -3,6 +3,7 @@ import actions from './actions'
 
 const initState = {
   movies: null,
+  movie: null,
 }
 
 const reducer = (state = initState, action) =>
@@ -10,6 +11,10 @@ const reducer = (state = initState, action) =>
     switch (action.type) {
       case actions.SET_MOVIES:
         draft.movies = action.payload
+        return
+
+      case actions.SET_MOVIE:
+        draft.movie = action.payload
         return
     }
   })

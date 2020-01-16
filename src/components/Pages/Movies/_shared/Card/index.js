@@ -6,15 +6,17 @@ const { Meta } = Card;
 
 
 const MoveCard = props => {
-
   const { id, title, description, imgSrc } = props
+
   const href = id + '-' + title.toLowerCase().replace(/[ ]/g,'-');
+  const desc = description.slice(0,215).length < description.length ? description.slice(0,215)+'...' : description.slice(0,215)
+
 
   return (
     <Wraper>
       <Link to={ `/movies/${href}`} >
         <Card hoverable cover={<img alt="example" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${imgSrc}`} /> }>
-          <Meta title={ title } description={ description } />
+          <Meta title={ title } description={ desc } />
         </Card>
       </Link>
     </Wraper>

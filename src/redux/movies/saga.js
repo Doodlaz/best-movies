@@ -3,10 +3,21 @@ import { API } from '../../../src/services'
 import actions from './actions'
 
 export function* getMovies() {
-  yield takeEvery(actions.GET_MOVIES_REQ, function*() {
+  yield takeEvery(actions.GET_MOVIES_REQ, function*(action) {
     try {
-      const { data } = yield call(API.getMovies)
-      yield put(actions.setMovies(data.results))
+      const { data } = yield call(API.getMovies, action.payload)
+      yield put(actions.setMovies(data))
+    } catch (e) {
+      // console.log(e)
+    }
+  })
+}
+
+export function* getMovie() {
+  yield takeEvery(actions.GET_MOVIE_REQ, function*(action) {
+    try {
+      const { data } = yield call(API.getMovie, action.payload)
+      yield put(actions.setMovie(data))
     } catch (e) {
       // console.log(e)
     }
@@ -15,5 +26,5 @@ export function* getMovies() {
 
 
 export default function* moviesSaga() {
-  yield all([getMovies()])
+  yield all([getMovies(), getMovie()])
 }

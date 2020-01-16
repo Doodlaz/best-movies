@@ -4,44 +4,60 @@ import actions from '../../../../src/redux/movies/actions'
 
 import MoveCard from './_shared/Card/index'
 
-import { Row, Typography } from 'antd'
+import { Wraper } from './styles'
+
+import { Row, Typography, Pagination, Spin } from 'antd'
 const { Title } = Typography
 
 const Movies = () => {
 
   const dispatch = useDispatch()
-  const { movies } = useSelector(({ movies }) => movies)
+  const { movies } = useSelector(({ movies }) => movies )
+
 
   const [loading, setLoading] = useState(true)
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
-    dispatch(actions.getMoviesReq({ movies }))
-  }, [])
+    dispatch(actions.getMoviesReq(page))
+  }, [page])
 
   useEffect(() => {
     if (movies) {
       setLoading(false)
+      console.log(movies);
     }
   }, [movies])
 
   if (!loading) {
-    console.log(movies);
+    // console.log(movies);
   }
 
+  const switchPage = page => {
+    setPage(page)
+  }
 
   return (
-    <>
+    <Wraper>
       <Row className={ 'title-wrap' } type='flex' justify='space-between' align='middle'>
         <Title level={ 2 }>Movies</Title>
       </Row>
-      <Row type='flex' justify='space-between' align='middle'>
-        { !loading &&
-          movies.map( movie => {
+      { !loading &&
+        <Row type='flex' justify='space-between' align='middle'>
+          {movies.results.map( movie => {
             return <MoveCard key={movie.id} id={ movie.id } title={ movie.title } imgSrc={ movie.poster_path} description={ movie.overview } />
-          })
-        }
-      </Row>
-    </>
+          })}
+          <Pagination defaultCurrent={1} total={ movies.total_results/2 } onChange={switchPage} />
+        </Row>
+      }
+      { loading &&
+      <div className="example">
+        <Spin size={'large'} />
+      </div>
+      }
+
+
+    </Wraper>
   )
 }
 
