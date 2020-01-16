@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'http://dev.artk.ai:3031/',
+  baseURL: 'https://api.themoviedb.org/3/',
   headers: {},
 })
 
