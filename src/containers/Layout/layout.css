@@ -23,3 +23,31 @@ ul {
     padding: 0;
     margin: 0;
 }
+
+.example {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-modal img{
+    width: 100%;
+}
+.img-modal .ant-modal-body {
+     padding: 0;
+}
+.img-modal .ant-modal-content {
+     border-radius: 0;
+}
+.img-modal .ant-modal-close {
+    background: rgba(255,255,255,.7);
+}
+.img-modal .ant-modal-close:hover {
+    background: #fff;
+}
+.img-modal .ant-modal-close-x {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}

@@ -4,7 +4,7 @@ import actions from '../../../../src/redux/movies/actions'
 
 import MoveCard from './_shared/Card/index'
 
-import { Wraper } from './styles'
+import { Wrapper } from './styles'
 
 import { Row, Typography, Pagination, Spin } from 'antd'
 const { Title } = Typography
@@ -25,7 +25,6 @@ const Movies = () => {
   useEffect(() => {
     if (movies) {
       setLoading(false)
-      console.log(movies);
     }
   }, [movies])
 
@@ -38,7 +37,7 @@ const Movies = () => {
   }
 
   return (
-    <Wraper>
+    <Wrapper>
       <Row className={ 'title-wrap' } type='flex' justify='space-between' align='middle'>
         <Title level={ 2 }>Movies</Title>
       </Row>
@@ -57,7 +56,7 @@ const Movies = () => {
       }
 
 
-    </Wraper>
+    </Wrapper>
   )
 }
 

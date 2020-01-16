@@ -16,6 +16,9 @@ const reducer = (state = initState, action) =>
       case actions.SET_MOVIE:
         draft.movie = action.payload
         return
+
+      case actions.CLEAR_MOVIE:
+        draft.movie = null
     }
   })
 

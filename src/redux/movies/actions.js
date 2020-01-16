@@ -21,6 +21,12 @@ const actions = {
     payload,
   }),
 
+  CLEAR_MOVIE: 'CLEAR_MOVIE',
+  clearMovie: () => ({
+    type: actions.CLEAR_MOVIE,
+  }),
+
+
 }
 
 export default actions

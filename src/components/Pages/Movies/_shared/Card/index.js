@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Wraper } from './styles'
+import { Wrapper } from './styles'
 import { Card } from 'antd'
 const { Meta } = Card;
 
@@ -13,13 +13,13 @@ const MoveCard = props => {
 
 
   return (
-    <Wraper>
+    <Wrapper>
       <Link to={ `/movies/${href}`} >
-        <Card hoverable cover={<img alt="example" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${imgSrc}`} /> }>
+        <Card hoverable cover={<img alt="preview" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${imgSrc}`} /> }>
           <Meta title={ title } description={ desc } />
         </Card>
       </Link>
-    </Wraper>
+    </Wrapper>
   )
 }
 

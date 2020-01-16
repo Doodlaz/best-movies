@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Wraper = styled.div`
+export const Wrapper = styled.div`
   flex: 0 0 48%;
   max-width: 48%;
   margin-bottom: 40px;
