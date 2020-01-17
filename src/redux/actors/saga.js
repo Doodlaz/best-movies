@@ -31,6 +31,8 @@ export function* getMovieActors() {
       yield put(actions.setMovieActors(data))
     } catch (e) {
       // console.log(e)
+
+
     }
   })
 }
