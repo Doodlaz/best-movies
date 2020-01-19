@@ -14,7 +14,6 @@ const Movies = () => {
   const dispatch = useDispatch()
   const { movies } = useSelector(({ movies }) => movies )
 
-
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
 
@@ -23,14 +22,8 @@ const Movies = () => {
   }, [page])
 
   useEffect(() => {
-    if (movies) {
-      setLoading(false)
-    }
+    movies && setLoading(false)
   }, [movies])
-
-  if (!loading) {
-    // console.log(movies);
-  }
 
   const switchPage = page => {
     setPage(page)

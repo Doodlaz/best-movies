@@ -2,42 +2,29 @@ import { all, takeEvery, call, put } from 'redux-saga/effects'
 import { API } from '../../../src/services'
 import actions from './actions'
 
-export function* getMovies() {
-  yield takeEvery(actions.GET_MOVIES_REQ, function*(action) {
+export function* getActors() {
+  yield takeEvery(actions.GET_ACTORS_REQ, function*(action) {
     try {
-      const { data } = yield call(API.getMovies, action.payload)
-      yield put(actions.setMovies(data))
+      const { data } = yield call(API.getActors, action.payload)
+      yield put(actions.setActors(data))
     } catch (e) {
       // console.log(e)
     }
   })
 }
 
-export function* getMovie() {
-  yield takeEvery(actions.GET_MOVIE_REQ, function*(action) {
+export function* getActor() {
+  yield takeEvery(actions.GET_ACTOR_REQ, function*(action) {
     try {
-      const { data } = yield call(API.getMovie, action.payload)
-      yield put(actions.setMovie(data))
+      const { data } = yield call(API.getActor, action.payload)
+      yield put(actions.setActor(data))
     } catch (e) {
       // console.log(e)
     }
   })
 }
 
-export function* getMovieActors() {
-  yield takeEvery(actions.GET_MOVIE_ACTORS_REQ, function*(action) {
-    try {
-      const { data } = yield call(API.getMovieActors, action.payload)
-      yield put(actions.setMovieActors(data))
-    } catch (e) {
-      // console.log(e)
 
-
-    }
-  })
-}
-
-
-export default function* moviesSaga() {
-  yield all([getMovies(), getMovie(), getMovieActors()])
+export default function* actorsSaga() {
+  yield all([getActors(), getActor()])
 }

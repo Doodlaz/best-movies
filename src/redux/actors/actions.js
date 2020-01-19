@@ -1,41 +1,29 @@
 const actions = {
-  GET_MOVIES_REQ: 'GET_MOVIES_REQ',
-  getMoviesReq: payload => ({
-    type: actions.GET_MOVIES_REQ,
+  GET_ACTORS_REQ: 'GET_ACTORS_REQ',
+  getActorsReq: payload => ({
+    type: actions.GET_ACTORS_REQ,
     payload
   }),
-  SET_MOVIES: 'SET_MOVIES',
-  setMovies: payload => ({
-    type: actions.SET_MOVIES,
+  SET_ACTORS: 'SET_ACTORS',
+  setActors: payload => ({
+    type: actions.SET_ACTORS,
     payload,
   }),
 
-  GET_MOVIE_REQ: 'GET_MOVIE_REQ',
-  getMovieReq: payload => ({
-    type: actions.GET_MOVIE_REQ,
+  GET_ACTOR_REQ: 'GET_ACTOR_REQ',
+  getActorReq: payload => ({
+    type: actions.GET_ACTOR_REQ,
     payload,
   }),
-  SET_MOVIE: 'SET_MOVIE',
-  setMovie: payload => ({
-    type: actions.SET_MOVIE,
-    payload,
-  }),
-
-  GET_MOVIE_ACTORS_REQ: 'GET_MOVIE_ACTORS_REQ',
-  getMovieActorsReq: payload => ({
-    type: actions.GET_MOVIE_ACTORS_REQ,
+  SET_ACTOR: 'SET_ACTOR',
+  setActor: payload => ({
+    type: actions.SET_ACTOR,
     payload,
   }),
 
-  SET_MOVIE_ACTORS: 'SET_MOVIE_ACTORS',
-  setMovieActors: payload => ({
-    type: actions.SET_MOVIE_ACTORS,
-    payload,
-  }),
-
-  CLEAR_MOVIE: 'CLEAR_MOVIE',
-  clearMovie: () => ({
-    type: actions.CLEAR_MOVIE,
+  CLEAR_ACTOR: 'CLEAR_ACTOR',
+  clearActor: () => ({
+    type: actions.CLEAR_ACTOR,
   }),
 
 

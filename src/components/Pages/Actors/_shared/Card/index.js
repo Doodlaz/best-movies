@@ -5,20 +5,21 @@ import { Wrapper } from './styles'
 import { Card } from 'antd'
 const { Meta } = Card;
 
-const dataMove = {
-  name: 'Brad Pitt',
-  portfolio: 'Fight Club, Inglourious Basterds, Se7en',
-  imgSrc: 'https://image.tmdb.org/t/p/w235_and_h235_face/kc3M04QQAuZ9woUvH3Ju5T7ZqG5.jpg',
-}
+const ActorCard = props => {
+  const { id, name, imgSrc, knownFor } = props
 
-const ActorCard = () => (
-  <Wrapper>
-    <Link to={ '/Actors/brad-pitt' }>
-      <Card hoverable cover={<img alt="example" src={ dataMove.imgSrc } /> }>
-        <Meta title={ dataMove.name } description={ dataMove.portfolio } />
-      </Card>
-    </Link>
-  </Wrapper>
-)
+  const href = id + '-' + name.toLowerCase().replace(/[ ]/g,'-');
+
+  return (
+    <Wrapper>
+      <Link to={ `/actors/${href}` }>
+        <Card hoverable cover={
+          <img alt="example" src={ `https://image.tmdb.org/t/p/w235_and_h235_face${imgSrc}` } />  }>
+          <Meta title={ name } description={ knownFor }/>
+        </Card>
+      </Link>
+    </Wrapper>
+  )
+}
 
 export default ActorCard

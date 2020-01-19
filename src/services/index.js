@@ -22,5 +22,9 @@ export class API {
   static getActors(credentials) {
     return axiosMovies.get(`person/popular${apiKye}&page=${credentials}`, credentials)
   }
+
+  static getActor(credentials) {
+    return axiosMovies.get(`person/${credentials}${apiKye}`)
+  }
   //  Actors END
 }
