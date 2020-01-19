@@ -6,7 +6,12 @@ export const Wrapper = styled.div`
     cursor: pointer;
   }
   
-  .info {
+  .section {
+    padding: 40px 0;
+  }
+  
+  .info,
+  .trailer {
     padding-left: 40px;
   }
   

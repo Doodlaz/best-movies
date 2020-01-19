@@ -21,6 +21,18 @@ const actions = {
     payload,
   }),
 
+  GET_MOVIE_TRAILER_REQ: 'GET_MOVIE_TRAILER_REQ',
+  getMovieTrailerReq: payload => ({
+    type: actions.GET_MOVIE_TRAILER_REQ,
+    payload,
+  }),
+
+  SET_MOVIE_TRAILER: 'SET_MOVIE_TRAILER',
+  setMovieTrailer: payload => ({
+    type: actions.SET_MOVIE_TRAILER,
+    payload,
+  }),
+
   GET_MOVIE_ACTORS_REQ: 'GET_MOVIE_ACTORS_REQ',
   getMovieActorsReq: payload => ({
     type: actions.GET_MOVIE_ACTORS_REQ,

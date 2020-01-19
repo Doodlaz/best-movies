@@ -21,10 +21,12 @@ const MovieSingle = ({ match }) => {
 
   const { movie } = useSelector(({ movies }) => movies)
   const { actors } = useSelector(({ movies }) => movies)
+  const { trailer } = useSelector(({ movies }) => movies)
 
   useEffect(() => {
     dispatch(actions.getMovieReq(id))
     dispatch(actions.getMovieActorsReq(id))
+    dispatch(actions.getMovieTrailerReq(id))
 
     return () => {
       dispatch(actions.clearMovie())
@@ -32,12 +34,14 @@ const MovieSingle = ({ match }) => {
   }, [id])
 
   useEffect(() => {
-    if (movie && actors) {
+    if (movie && actors && trailer) {
       setLoading(false)
       // console.log(movie, ' movie');
+      // console.log(trailer, ' trailer');
       // console.log(actors, ' actors');
+      console.log(trailer.results[0], ' trailer');
     }
-  }, [movie, actors])
+  }, [movie, actors, trailer])
 
   return (
     <Wrapper>
@@ -56,7 +60,11 @@ const MovieSingle = ({ match }) => {
 
               <Title level={ 4 }>Overview</Title>
               <Paragraph>{ movie.overview }</Paragraph>
+            </Col>
+          </Row>
 
+          <Row className={ 'section' } type='flex'>
+            <Col span={6}>
               <Title level={ 4 }>Genres</Title>
               <div className={ 'tags-wrap' }>
                 {movie.genres.map(item => (<Tag key={ item.id } ><Link to={'#'}>{item.name}</Link></Tag>))}
@@ -70,7 +78,16 @@ const MovieSingle = ({ match }) => {
               <Paragraph>{ `$${(movie.revenue+'').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,')}.00` }</Paragraph>
             </Col>
 
+            <Col className={ 'trailer' } span={18}>
+              { trailer.results[0] && <iframe width="100%"
+                height="440"
+                frameBorder="0"
+                allowFullScreen
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                src={ `https://www.youtube.com/embed/${trailer.results[0].key}` }
+              /> }
 
+            </Col>
           </Row>
 
           <Row className={ 'actors' } type='flex'>
