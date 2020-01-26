@@ -61,23 +61,23 @@ const MovieSingle = ({ match }) => {
             <Col span={18} className={ 'info' }>
               <Title level={ 2 }>{ movie.title }</Title>
 
-              <Title level={ 4 }>Overview</Title>
+              <Title level={ 4 }>Описание</Title>
               <Paragraph>{ movie.overview }</Paragraph>
             </Col>
           </Row>
 
           <Row className={ 'section' } type='flex'>
             <Col span={6}>
-              <Title level={ 4 }>Genres</Title>
+              <Title level={ 4 }>Жанры</Title>
               <div className={ 'tags-wrap' }>
                 {movie.genres.map(item => (<Tag key={ item.id } ><Link to={'#'}>{item.name}</Link></Tag>))}
               </div>
 
 
-              <Title level={ 4 }>Budget</Title>
+              <Title level={ 4 }>Бюджет</Title>
               <Paragraph>{ `$${(movie.budget+'').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,')}.00` }</Paragraph>
 
-              <Title level={ 4 }>Revenue</Title>
+              <Title level={ 4 }>Доход</Title>
               <Paragraph>{ `$${(movie.revenue+'').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,')}.00` }</Paragraph>
             </Col>
 
@@ -109,8 +109,8 @@ const MovieSingle = ({ match }) => {
               </div>
             )}})}
           </Row>
-          {actors.cast.length > actorsShow && <Button type="link" onClick={() => {setActorsShow(actors.cast.length)}}>Show More</Button>}
-          {actors.cast.length === actorsShow && <Button type="link" onClick={() => {setActorsShow(5)}}>Hide</Button>}
+          {actors.cast.length > actorsShow && <Button type="link" onClick={() => {setActorsShow(actors.cast.length)}}>Показать всех</Button>}
+          {actors.cast.length === actorsShow && <Button type="link" onClick={() => {setActorsShow(5)}}>Скрыть</Button>}
       </>
       }
       { loading &&

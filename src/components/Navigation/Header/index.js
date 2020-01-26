@@ -5,21 +5,6 @@ import { nav } from '../../../../src/settings/Configs/dataConfig'
 
 import { Wrapper, Container } from './styles'
 
-const links =[
-  {
-    name: 'Home',
-    href: '/',
-  },
-  {
-    name: 'Movies',
-    href: '/movies',
-  },
-  {
-    name: 'Actors',
-    href: '/actors',
-  }
-];
-
 const Header = () => {
 
   const renderLinks = () => {

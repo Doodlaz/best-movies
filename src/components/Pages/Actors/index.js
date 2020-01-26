@@ -28,7 +28,7 @@ const Actors = () => {
   return (
     <Wrapper>
       <Row className={ 'title-wrap' } type='flex' justify='space-between' align='middle'>
-        <Title level={ 2 }>Actors</Title>
+        <Title level={ 2 }>Актеры</Title>
       </Row>
       { !loading &&
         <Row type='flex' justify='space-between' align='middle'>

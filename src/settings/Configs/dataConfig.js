@@ -3,17 +3,12 @@ import React from 'react'
 export const nav = [
   {
     id: 0,
-    title: 'Home',
-    href: '/',
-  },
-  {
-    id: 1,
-    title: 'Movies',
+    title: 'Фильмы',
     href: '/movies',
   },
   {
-    id: 2,
-    title: 'Actors',
+    id: 1,
+    title: 'Актеры',
     href: '/actors',
   }
 ]
