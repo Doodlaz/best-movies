@@ -2,7 +2,12 @@ import axios from 'axios'
 
 const instance = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
-  headers: {},
+  headers: {
+    'content-type': 'application/json',
+  },
+  params: {
+    'api_key': '723a17a7b40484270fe6c08b3817cb2a',
+  }
 })
 
 
