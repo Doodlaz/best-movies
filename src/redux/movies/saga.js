@@ -38,7 +38,7 @@ export function* getMovieActors() {
 export function* getMovieTrailer() {
   yield takeEvery(actions.GET_MOVIE_TRAILER_REQ, function*(action) {
     try {
-      const { data } = yield call(API.getMovieTrailer, action.payload)
+      const { data } = yield call(API.getMovieTrailer, action.payload, action.lang)
       yield put(actions.setMovieTrailer(data))
     } catch (e) {
       // console.log(e)

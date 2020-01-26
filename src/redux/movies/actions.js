@@ -22,9 +22,10 @@ const actions = {
   }),
 
   GET_MOVIE_TRAILER_REQ: 'GET_MOVIE_TRAILER_REQ',
-  getMovieTrailerReq: payload => ({
+  getMovieTrailerReq: (payload, lang) => ({
     type: actions.GET_MOVIE_TRAILER_REQ,
     payload,
+    lang,
   }),
 
   SET_MOVIE_TRAILER: 'SET_MOVIE_TRAILER',

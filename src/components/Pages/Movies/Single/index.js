@@ -18,6 +18,8 @@ const MovieSingle = ({ match }) => {
   const [loading, setLoading] = useState(true)
   const [popupImg, setPopupImg] = useState(false)
   const [actorsShow, setActorsShow] = useState(5)
+  const [lang, setLang] = useState('ru')
+
 
   const { movie } = useSelector(({ movies }) => movies)
   const { actors } = useSelector(({ movies }) => movies)
@@ -26,20 +28,21 @@ const MovieSingle = ({ match }) => {
   useEffect(() => {
     dispatch(actions.getMovieReq(id))
     dispatch(actions.getMovieActorsReq(id))
-    dispatch(actions.getMovieTrailerReq(id))
+    dispatch(actions.getMovieTrailerReq(id, lang))
 
     return () => {
       dispatch(actions.clearMovie())
     }
-  }, [id])
+  }, [id, lang])
 
   useEffect(() => {
     if (movie && actors && trailer) {
-      setLoading(false)
-      // console.log(movie, ' movie');
-      // console.log(trailer, ' trailer');
-      // console.log(actors, ' actors');
-      console.log(trailer.results[0], ' trailer');
+      if (trailer.results.length > 0) {
+        setLoading(false)
+      } else {
+        setLoading(true)
+        setLang('en')
+      }
     }
   }, [movie, actors, trailer])
 

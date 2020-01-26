@@ -11,8 +11,8 @@ export class API {
     return axiosMovies.get(`movie/${credentials}`)
   }
 
-  static getMovieTrailer(credentials) {
-    return axiosMovies.get(`movie/${credentials}/videos${apiKye}&language=ru`)
+  static getMovieTrailer(credentials, lang) {
+    return axiosMovies.get(`movie/${credentials}/videos?language=${lang}`)
   }
 
   static getMovieActors(credentials) {
