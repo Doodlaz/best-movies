@@ -5,6 +5,7 @@ const initState = {
   movies: null,
   movie: null,
   actors: null,
+  trailer: null,
 }
 
 const reducer = (state = initState, action) =>
@@ -16,6 +17,10 @@ const reducer = (state = initState, action) =>
 
       case actions.SET_MOVIE:
         draft.movie = action.payload
+        return
+
+      case actions.SET_MOVIE_TRAILER:
+        draft.trailer = action.payload
         return
 
       case actions.SET_MOVIE_ACTORS:

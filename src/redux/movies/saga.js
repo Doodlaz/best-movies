@@ -35,7 +35,23 @@ export function* getMovieActors() {
   })
 }
 
+export function* getMovieTrailer() {
+  yield takeEvery(actions.GET_MOVIE_TRAILER_REQ, function*(action) {
+    try {
+      const { data } = yield call(API.getMovieTrailer, action.payload)
+      yield put(actions.setMovieTrailer(data))
+    } catch (e) {
+      // console.log(e)
+    }
+  })
+}
+
 
 export default function* moviesSaga() {
-  yield all([getMovies(), getMovie(), getMovieActors()])
+  yield all([
+    getMovies(),
+    getMovie(),
+    getMovieActors(),
+    getMovieTrailer(),
+  ])
 }
