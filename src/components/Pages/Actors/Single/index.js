@@ -7,7 +7,7 @@ import { Row, Col, Spin, Typography, Tag, Modal, Card, Button, Icon } from 'antd
 import { Wrapper }                                                    from './styles'
 import { Link }                                                       from "react-router-dom";
 const { Title, Paragraph } = Typography
-const { Meta } = Card
+
 
 const ActorsSingle = ({ match }) => {
   const dispatch = useDispatch()
@@ -50,7 +50,7 @@ const ActorsSingle = ({ match }) => {
             <Col span={18} className={ 'info' }>
               <Title level={ 2 }>{ actor.name }</Title>
 
-              <Title level={ 4 }>Biography</Title>
+              <Title level={ 4 }>Биография</Title>
               <Paragraph>
                 <div className={'biography'}>
                   { actor.biography }
@@ -66,24 +66,24 @@ const ActorsSingle = ({ match }) => {
 
           <Row className={ 'bottom' } type='flex' justify='space-between'>
             <Col span={6} className={ 'bottom-l' }>
-              <Title level={ 4 }>Personal Info</Title>
+              <Title level={ 4 }>Персональная информация</Title>
               <Paragraph>
-                <strong>Gender</strong>
-                <p>{ actor.gender == 2 ? 'Male' : 'Female' }</p>
+                <strong>Пол</strong>
+                <p>{ actor.gender == 2 ? 'Мужчина' : 'Жинщина' }</p>
               </Paragraph>
 
               <Paragraph>
-                <strong>Birthday</strong>
+                <strong>Дата рождения</strong>
                 <p>{ actor.birthday }</p>
               </Paragraph>
 
               <Paragraph>
-                <strong>Place of Birth</strong>
+                <strong>Место Рождения</strong>
                 <p>{ actor.place_of_birth }</p>
               </Paragraph>
             </Col>
             <Col span={18} className={ 'bottom-r' } >
-              Know for
+              Известность за:
             </Col>
           </Row>
         </>
